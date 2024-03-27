@@ -3,4 +3,14 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}, My name is William Colbert and I am happy to have you here!
-    input(type="button" class="btn btn-secondary" value="I am a button")
+    input(type="button" class="btn btn-secondary" value="I am a button" onclick = "double()")
+    div(id="double") Up the amount
+    script.
+      var value = 0;
+      var power = 1;
+      function double() {
+        value += 1;
+        power *= 2;
+        document.getElementById("double").innerHTML = "Two to the power " + value + " is " + power + "";
+      }
+      
