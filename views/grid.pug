@@ -2,4 +2,10 @@ extends layout
 
 block content
     h1= title
-    
+    p Before Conversion: #{query.rows} and #{query.cols}
+    - let rows = Number(query.rows)
+    - let cols = Number(query.cols)
+    p After Conversion: #{rows} and #{cols}
+    if(Number.isInteger(rows) == false || Number.isInteger(cols) == false)
+      p One of the values (rows or cols) is not an integer
+    else if()
